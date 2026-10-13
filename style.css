@@ -1130,3 +1130,15 @@ footer {
         transform: none;
     }
 }
+@media (max-width: 650px) {
+    .coach-photo {
+        height: 220px;
+    }
+
+    .coach-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+    }
+}
