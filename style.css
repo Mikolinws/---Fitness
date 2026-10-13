@@ -1142,3 +1142,18 @@ footer {
         object-position: center top;
     }
 }
+@media screen and (max-width: 650px) {
+    .coach-track .coach-card .coach-photo {
+        height: 180px !important;
+        min-height: 180px !important;
+        max-height: 180px !important;
+        overflow: hidden;
+    }
+
+    .coach-track .coach-card .coach-photo img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+    }
+}
