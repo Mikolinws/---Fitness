@@ -1,3 +1,7 @@
+/* ========================================
+   SPORTIK AKSAY — ОСНОВНЫЕ НАСТРОЙКИ
+======================================== */
+
 :root {
     --yellow: #f5e500;
     --black: #101010;
@@ -21,6 +25,7 @@ body {
     background: var(--black);
     color: var(--white);
     font-family: Manrope, Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 a {
@@ -34,7 +39,15 @@ button {
 }
 
 img {
+    display: block;
     max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
 }
 
 .container {
@@ -47,13 +60,15 @@ img {
     background: var(--yellow);
 }
 
-/* HEADER */
+/* ========================================
+   HEADER
+======================================== */
 
 header {
     position: sticky;
     top: 0;
     z-index: 20;
-    background: rgba(16, 16, 16, .92);
+    background: rgba(16, 16, 16, 0.94);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid #262626;
 }
@@ -64,17 +79,18 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 24px;
+    position: relative;
 }
 
 .brand {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-shrink: 0;
     font-family: Oswald, sans-serif;
     font-size: 27px;
     font-weight: 700;
-    letter-spacing: .5px;
-    flex-shrink: 0;
+    letter-spacing: 0.5px;
 }
 
 .brand-mark {
@@ -90,20 +106,20 @@ header {
 }
 
 .brand span:last-child em {
-    font-style: normal;
     color: var(--yellow);
+    font-style: normal;
 }
 
 .navlinks {
     display: flex;
     align-items: center;
     gap: 28px;
-    font-size: 13px;
     color: #ddd;
+    font-size: 13px;
 }
 
 .navlinks a {
-    transition: color .2s;
+    transition: color 0.2s;
 }
 
 .navlinks a:hover {
@@ -113,22 +129,22 @@ header {
 .nav-cta,
 .btn {
     display: inline-flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 10px;
+    padding: 14px 20px;
+    border: 0;
+    border-radius: 4px;
     background: var(--yellow);
     color: #101010;
     font-weight: 800;
-    border: 0;
-    padding: 14px 20px;
-    border-radius: 4px;
-    transition: transform .2s, background .2s;
+    transition: transform 0.2s, background 0.2s;
     cursor: pointer;
 }
 
 .nav-cta {
-    font-size: 12px;
     padding: 12px 16px;
+    font-size: 12px;
 }
 
 .btn:hover,
@@ -139,19 +155,21 @@ header {
 
 .menu-btn {
     display: none;
-    background: none;
-    color: white;
+    padding: 9px 12px;
     border: 1px solid #444;
     border-radius: 4px;
-    padding: 9px 12px;
+    background: none;
+    color: white;
 }
 
-/* HERO */
+/* ========================================
+   HERO
+======================================== */
 
 .hero {
     min-height: 650px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
     gap: 32px;
     padding: 72px 0 82px;
@@ -164,10 +182,10 @@ header {
     position: absolute;
     width: 430px;
     height: 430px;
-    border: 1px solid rgba(245, 229, 0, .12);
-    border-radius: 50%;
-    right: 9%;
     top: 12%;
+    right: 9%;
+    border: 1px solid rgba(245, 229, 0, 0.12);
+    border-radius: 50%;
     pointer-events: none;
 }
 
@@ -186,34 +204,30 @@ header {
     content: "";
     width: 28px;
     height: 2px;
-    background: var(--yellow);
     flex-shrink: 0;
-}
-
-h1, h2, h3, p {
-    margin-top: 0;
+    background: var(--yellow);
 }
 
 h1 {
+    margin: 22px 0;
     font-family: Oswald, sans-serif;
     font-size: clamp(54px, 7vw, 91px);
-    line-height: .98;
-    text-transform: uppercase;
-    margin: 22px 0;
+    line-height: 0.98;
     letter-spacing: -1px;
+    text-transform: uppercase;
 }
 
 h1 span {
-    color: var(--yellow);
     display: block;
+    color: var(--yellow);
 }
 
 .hero-copy {
     max-width: 480px;
+    margin-bottom: 28px;
     color: #b9b9b9;
     font-size: 15px;
     line-height: 1.85;
-    margin-bottom: 28px;
 }
 
 .hero-actions {
@@ -230,9 +244,9 @@ h1 span {
     padding: 13px 18px;
     border: 1px solid #555;
     border-radius: 4px;
-    font-weight: 700;
     font-size: 13px;
-    transition: .2s;
+    font-weight: 700;
+    transition: 0.2s;
 }
 
 .btn-outline:hover {
@@ -250,18 +264,20 @@ h1 span {
 }
 
 .stat strong {
+    display: block;
+    color: var(--yellow);
     font-family: Oswald, sans-serif;
     font-size: 27px;
-    color: var(--yellow);
-    display: block;
 }
 
 .stat span {
-    font-size: 11px;
     color: #aaa;
+    font-size: 11px;
 }
 
-/* ГЛАВНОЕ ФОТО */
+/* ========================================
+   ГЛАВНОЕ ФОТО
+======================================== */
 
 .hero-photo {
     height: 485px;
@@ -272,17 +288,17 @@ h1 span {
 }
 
 .photo-placeholder {
-    height: 100%;
     width: 100%;
-    background: linear-gradient(135deg, #252525, #111 65%);
-    border: 1px solid #383838;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     padding: 25px;
     position: relative;
     overflow: hidden;
+    border: 1px solid #383838;
+    background: linear-gradient(135deg, #252525, #111 65%);
+    text-align: center;
 }
 
 .photo-placeholder:before {
@@ -290,11 +306,15 @@ h1 span {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(140deg, transparent 30%, rgba(245, 229, 0, .12)),
+        linear-gradient(
+            140deg,
+            transparent 30%,
+            rgba(245, 229, 0, 0.12)
+        ),
         repeating-linear-gradient(
             135deg,
             transparent 0 22px,
-            rgba(255, 255, 255, .018) 23px 24px
+            rgba(255, 255, 255, 0.018) 23px 24px
         );
 }
 
@@ -303,30 +323,30 @@ h1 span {
     position: absolute;
     width: 250px;
     height: 250px;
-    border: 35px solid rgba(245, 229, 0, .07);
-    border-radius: 50%;
     right: -50px;
     bottom: -70px;
+    border: 35px solid rgba(245, 229, 0, 0.07);
+    border-radius: 50%;
 }
 
 .placeholder-inner {
+    max-width: 290px;
     position: relative;
     z-index: 1;
-    max-width: 290px;
 }
 
 .placeholder-inner .camera {
-    font-size: 38px;
-    color: var(--yellow);
     margin-bottom: 16px;
+    color: var(--yellow);
+    font-size: 38px;
 }
 
 .placeholder-inner strong {
     display: block;
+    margin-bottom: 8px;
     font-family: Oswald, sans-serif;
     font-size: 26px;
     text-transform: uppercase;
-    margin-bottom: 8px;
 }
 
 .placeholder-inner small {
@@ -339,23 +359,23 @@ h1 span {
     z-index: 2;
     left: -18px;
     bottom: 28px;
+    padding: 15px 20px;
     background: var(--yellow);
     color: #111;
-    padding: 15px 20px;
     font-size: 12px;
     font-weight: 800;
-    text-transform: uppercase;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .photo-number {
     position: absolute;
-    right: 16px;
-    top: 16px;
     z-index: 2;
+    top: 16px;
+    right: 16px;
+    color: var(--yellow);
     font-family: Oswald, sans-serif;
     font-size: 14px;
-    color: var(--yellow);
     letter-spacing: 2px;
 }
 
@@ -364,23 +384,24 @@ h1 span {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    display: block;
-    background: #111;
     border: 1px solid #383838;
+    background: #111;
 }
 
-/* БЕГУЩАЯ СТРОКА */
+/* ========================================
+   БЕГУЩАЯ СТРОКА
+======================================== */
 
 .ticker {
+    padding: 15px 0;
+    overflow: hidden;
     background: var(--yellow);
     color: #111;
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 15px 0;
     font-family: Oswald, sans-serif;
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 1px;
+    white-space: nowrap;
 }
 
 .ticker-inner {
@@ -394,7 +415,9 @@ h1 span {
     padding-left: 30px;
 }
 
-/* ОБЩИЕ СЕКЦИИ */
+/* ========================================
+   ОБЩИЕ СЕКЦИИ
+======================================== */
 
 section {
     padding: 92px 0;
@@ -402,18 +425,18 @@ section {
 
 .section-head {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     justify-content: space-between;
     gap: 25px;
     margin-bottom: 34px;
 }
 
 .section-head h2 {
+    margin: 14px 0 0;
     font-family: Oswald, sans-serif;
     font-size: clamp(38px, 5vw, 58px);
-    text-transform: uppercase;
     line-height: 1.02;
-    margin: 14px 0 0;
+    text-transform: uppercase;
 }
 
 .section-head h2 span {
@@ -422,13 +445,15 @@ section {
 
 .section-note {
     max-width: 350px;
+    margin: 0;
     color: var(--muted);
     font-size: 13px;
     line-height: 1.8;
-    margin: 0;
 }
 
-/* ВИДЫ СПОРТА */
+/* ========================================
+   ВИДЫ СПОРТА
+======================================== */
 
 .sports-grid {
     display: grid;
@@ -438,44 +463,44 @@ section {
 
 .sport-card {
     min-height: 235px;
-    background: var(--panel);
-    border: 1px solid #292929;
     padding: 23px;
     position: relative;
     overflow: hidden;
-    transition: .25s;
+    border: 1px solid #292929;
+    background: var(--panel);
+    transition: 0.25s;
 }
 
 .sport-card:hover {
-    border-color: var(--yellow);
     transform: translateY(-5px);
+    border-color: var(--yellow);
 }
 
 .sport-index {
-    font-family: Oswald, sans-serif;
     color: #666;
+    font-family: Oswald, sans-serif;
     font-size: 13px;
 }
 
 .sport-icon {
-    font-size: 34px;
-    margin: 27px 0 18px;
     display: block;
+    margin: 27px 0 18px;
     filter: grayscale(1);
+    font-size: 34px;
 }
 
 .sport-card h3 {
-    font-family: Oswald, sans-serif;
-    text-transform: uppercase;
-    font-size: 24px;
     margin-bottom: 10px;
+    font-family: Oswald, sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
 }
 
 .sport-card p {
+    margin: 0;
     color: var(--muted);
     font-size: 12px;
     line-height: 1.65;
-    margin: 0;
 }
 
 .sport-arrow {
@@ -486,7 +511,9 @@ section {
     font-size: 20px;
 }
 
-/* ЦЕНЫ */
+/* ========================================
+   ЦЕНЫ
+======================================== */
 
 .pricing {
     background: #151515;
@@ -499,70 +526,70 @@ section {
 }
 
 .price-card {
-    border: 1px solid #343434;
-    padding: 27px 25px;
-    background: #111;
-    position: relative;
+    min-width: 0;
+    min-height: 290px;
     display: flex;
     flex-direction: column;
-    min-height: 290px;
-    min-width: 0;
+    padding: 27px 25px;
+    position: relative;
+    border: 1px solid #343434;
+    background: #111;
 }
 
 .price-card.featured {
-    border: 1px solid var(--yellow);
+    border-color: var(--yellow);
     background: linear-gradient(145deg, #24220b, #111 60%);
 }
 
 .price-card .label {
+    color: var(--yellow);
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 1.8px;
-    color: var(--yellow);
     text-transform: uppercase;
 }
 
 .price-card h3 {
-    font-family: Oswald, sans-serif;
-    text-transform: uppercase;
-    font-size: 24px;
     margin: 14px 0 8px;
+    font-family: Oswald, sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
 }
 
 .price-card .price {
+    margin: 5px 0 0;
     font-family: Oswald, sans-serif;
     font-size: 43px;
     font-weight: 700;
-    margin: 5px 0 0;
 }
 
 .price-card .price small {
-    font: 600 14px Manrope, sans-serif;
     color: #aaa;
+    font: 600 14px Manrope, sans-serif;
 }
 
 .price-card p {
+    margin: 10px 0 23px;
     color: var(--muted);
     font-size: 12px;
     line-height: 1.7;
-    margin: 10px 0 23px;
 }
 
 .price-card .btn {
-    margin-top: auto;
     width: 100%;
+    margin-top: auto;
     font-size: 12px;
 }
 
 .price-card .text-link {
     margin-top: auto;
-    border: 1px solid #444;
     padding: 13px;
-    text-align: center;
+    border: 1px solid #444;
     border-radius: 4px;
-    font-weight: 800;
     font-size: 12px;
-    transition: .2s;
+    font-weight: 800;
+    text-align: center;
+    transition: 0.2s;
 }
 
 .price-card .text-link:hover {
@@ -573,10 +600,12 @@ section {
 .unlimited-note {
     color: var(--yellow) !important;
     font-weight: 800;
-    letter-spacing: .3px;
+    letter-spacing: 0.3px;
 }
 
-/* ТРЕНЕРЫ */
+/* ========================================
+   ТРЕНЕРЫ — КАРУСЕЛЬ
+======================================== */
 
 .coach-section {
     overflow: hidden;
@@ -592,18 +621,20 @@ section {
     width: 44px;
     height: 44px;
     flex-shrink: 0;
+    display: grid;
+    place-items: center;
     border: 1px solid #454545;
+    border-radius: 50%;
     background: #171717;
     color: white;
-    border-radius: 50%;
     font-size: 20px;
     cursor: pointer;
-    transition: .2s;
+    transition: 0.2s;
 }
 
 .slider-btn:hover {
-    background: var(--yellow);
     border-color: var(--yellow);
+    background: var(--yellow);
     color: #111;
 }
 
@@ -612,11 +643,11 @@ section {
     grid-auto-columns: calc((100% - 42px) / 4);
     grid-auto-flow: column;
     gap: 14px;
+    padding: 4px 1px 15px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none;
     scroll-behavior: smooth;
-    padding: 4px 1px 15px;
+    scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -625,30 +656,30 @@ section {
 }
 
 .coach-card {
-    scroll-snap-align: start;
-    background: #181818;
-    border: 1px solid #2d2d2d;
     min-width: 0;
     overflow: hidden;
+    scroll-snap-align: start;
+    border: 1px solid #2d2d2d;
+    background: #181818;
 }
 
-/* ФОТО ТРЕНЕРОВ */
+/* Фото тренеров на компьютерах */
 
 .coach-photo {
-    height: 340px;
     width: 100%;
-    background: #111;
+    height: 340px;
     position: relative;
-    overflow: hidden;
     display: block;
+    overflow: hidden;
+    background: #111;
 }
 
 .coach-photo img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    object-fit: contain;
+    object-position: center center;
     background: #111;
 }
 
@@ -659,16 +690,16 @@ section {
 .coach-photo .add-photo {
     position: absolute;
     inset: 0;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 1;
-    text-align: center;
+    padding: 20px;
     color: #999;
     font-size: 11px;
     line-height: 1.7;
-    padding: 20px;
+    text-align: center;
 }
 
 .add-photo b {
@@ -690,23 +721,23 @@ section {
 }
 
 .coach-info h3 {
-    font-family: Oswald, sans-serif;
-    text-transform: uppercase;
-    font-size: 23px;
     margin: 8px 0;
+    font-family: Oswald, sans-serif;
+    font-size: 23px;
+    text-transform: uppercase;
 }
 
 .coach-info p {
-    font-size: 12px;
-    color: #aaa;
-    line-height: 1.7;
     margin: 0;
+    color: #aaa;
+    font-size: 12px;
+    line-height: 1.7;
 }
 
 .coach-progress {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     gap: 10px;
     margin-top: 18px;
     color: #777;
@@ -717,12 +748,14 @@ section {
     color: var(--yellow);
 }
 
-/* CTA-БЛОК */
+/* ========================================
+   CTA-БЛОК
+======================================== */
 
 .cta-band {
+    padding: 48px 0;
     background: var(--yellow);
     color: #111;
-    padding: 48px 0;
 }
 
 .cta-content {
@@ -733,42 +766,44 @@ section {
 }
 
 .cta-content h2 {
+    margin: 0 0 10px;
     font-family: Oswald, sans-serif;
-    text-transform: uppercase;
     font-size: clamp(32px, 4vw, 48px);
     line-height: 1.05;
-    margin: 0 0 10px;
+    text-transform: uppercase;
 }
 
 .cta-content p {
-    font-size: 13px;
     margin: 0;
     color: #393700;
+    font-size: 13px;
 }
 
 .btn-dark {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    padding: 15px 20px;
+    border-radius: 4px;
     background: #111;
     color: #fff;
-    border-radius: 4px;
-    padding: 15px 20px;
     font-size: 12px;
     font-weight: 800;
     white-space: nowrap;
-    transition: background .2s;
+    transition: background 0.2s;
 }
 
 .btn-dark:hover {
     background: #292929;
 }
 
-/* КОНТАКТЫ */
+/* ========================================
+   КОНТАКТЫ
+======================================== */
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 45px;
 }
 
@@ -780,28 +815,28 @@ section {
 
 .contact-item {
     display: flex;
-    gap: 15px;
     align-items: flex-start;
+    gap: 15px;
 }
 
 .contact-icon {
     width: 42px;
     height: 42px;
     flex: 0 0 42px;
-    background: #24230c;
-    color: var(--yellow);
     display: grid;
     place-items: center;
     border: 1px solid #46420a;
+    background: #24230c;
+    color: var(--yellow);
 }
 
 .contact-item small {
     display: block;
+    margin-bottom: 5px;
     color: #999;
     font-size: 10px;
-    text-transform: uppercase;
     letter-spacing: 1.5px;
-    margin-bottom: 5px;
+    text-transform: uppercase;
 }
 
 .contact-item strong {
@@ -812,15 +847,15 @@ section {
 
 .map-box {
     min-height: 330px;
-    background: #181818;
-    border: 1px solid #303030;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     padding: 30px;
     position: relative;
     overflow: hidden;
+    border: 1px solid #303030;
+    background: #181818;
+    text-align: center;
 }
 
 .map-box:before {
@@ -838,7 +873,7 @@ section {
             transparent 0 65px,
             #252525 66px 68px
         );
-    opacity: .65;
+    opacity: 0.65;
 }
 
 .map-inner {
@@ -847,42 +882,44 @@ section {
 }
 
 .map-pin {
-    font-size: 32px;
     color: var(--yellow);
+    font-size: 32px;
 }
 
 .map-inner h3 {
-    font-family: Oswald, sans-serif;
-    text-transform: uppercase;
-    font-size: 26px;
     margin: 12px 0;
+    font-family: Oswald, sans-serif;
+    font-size: 26px;
+    text-transform: uppercase;
 }
 
 .map-inner p {
-    font-size: 12px;
     color: #aaa;
+    font-size: 12px;
     line-height: 1.7;
 }
 
-/* FOOTER */
+/* ========================================
+   FOOTER
+======================================== */
 
 footer {
-    border-top: 1px solid #2a2a2a;
     padding: 25px 0;
+    border-top: 1px solid #2a2a2a;
     color: #777;
     font-size: 11px;
 }
 
 .footer-inner {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     gap: 20px;
 }
 
 .footer-brand {
-    font-family: Oswald, sans-serif;
     color: #eee;
+    font-family: Oswald, sans-serif;
     font-size: 19px;
 }
 
@@ -890,12 +927,14 @@ footer {
     color: var(--yellow);
 }
 
-/* АНИМАЦИИ */
+/* ========================================
+   АНИМАЦИИ
+======================================== */
 
 .reveal {
     opacity: 0;
     transform: translateY(18px);
-    transition: opacity .6s ease, transform .6s ease;
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .reveal.visible {
@@ -903,7 +942,9 @@ footer {
     transform: none;
 }
 
-/* ПЛАНШЕТЫ */
+/* ========================================
+   ПЛАНШЕТЫ
+======================================== */
 
 @media (max-width: 900px) {
     .navlinks {
@@ -920,9 +961,9 @@ footer {
 
     .hero {
         min-height: auto;
-        padding: 60px 0;
-        grid-template-columns: 1fr .85fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
         gap: 22px;
+        padding: 60px 0;
     }
 
     .hero-photo {
@@ -938,7 +979,7 @@ footer {
     }
 
     .coach-photo {
-        height: 320px;
+        height: 360px;
     }
 
     .price-grid {
@@ -948,13 +989,20 @@ footer {
     .price-card:last-child {
         grid-column: span 2;
     }
+
+    .contact-grid {
+        gap: 28px;
+    }
 }
 
-/* ТЕЛЕФОНЫ */
+/* ========================================
+   ТЕЛЕФОНЫ
+======================================== */
 
 @media (max-width: 650px) {
     .container {
-        width: min(calc(100% - 30px), 520px);
+        width: calc(100% - 30px);
+        max-width: 520px;
     }
 
     .nav {
@@ -973,14 +1021,15 @@ footer {
         display: none;
         position: absolute;
         top: 66px;
-        left: 0;
-        right: 0;
-        background: #111;
-        padding: 20px 22px 24px;
-        border-bottom: 1px solid #333;
+        left: -15px;
+        right: -15px;
+        z-index: 30;
         flex-direction: column;
         align-items: flex-start;
         gap: 20px;
+        padding: 20px 22px 24px;
+        border-bottom: 1px solid #333;
+        background: #111;
     }
 
     .navlinks.open {
@@ -993,12 +1042,12 @@ footer {
 
     .hero {
         grid-template-columns: minmax(0, 1fr);
-        padding: 48px 0 55px;
         gap: 35px;
+        padding: 48px 0 55px;
     }
 
     h1 {
-        font-size: clamp(55px, 15vw, 78px);
+        font-size: clamp(48px, 13.5vw, 78px);
     }
 
     .hero-copy {
@@ -1034,17 +1083,22 @@ footer {
         gap: 16px;
     }
 
+    .section-head h2 {
+        font-size: clamp(36px, 10vw, 48px);
+    }
+
     .section-note {
         font-size: 12px;
     }
 
     .sports-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
     }
 
     .sport-card {
-        padding: 17px;
         min-height: 210px;
+        padding: 17px;
     }
 
     .sport-card h3 {
@@ -1059,24 +1113,27 @@ footer {
         grid-template-columns: minmax(0, 1fr);
     }
 
+    .price-card,
     .price-card:last-child {
+        min-height: 260px;
         grid-column: auto;
     }
 
-    .price-card {
-        min-height: 260px;
-    }
+    /* КАРУСЕЛЬ ТРЕНЕРОВ НА ТЕЛЕФОНАХ */
 
     .coach-track {
-        grid-auto-columns: 82%;
+        grid-auto-columns: 86%;
+        gap: 12px;
+        padding-bottom: 15px;
     }
 
-    /* УМЕНЬШЕННЫЕ ФОТО ТРЕНЕРОВ НА ТЕЛЕФОНАХ */
     .coach-track .coach-card .coach-photo {
-        height: 180px;
-        min-height: 180px;
-        max-height: 180px;
+        width: 100%;
+        height: 400px;
+        min-height: 400px;
+        max-height: 400px;
         overflow: hidden;
+        background: #111;
     }
 
     .coach-track .coach-card .coach-photo img {
@@ -1084,7 +1141,8 @@ footer {
         width: 100%;
         height: 100%;
         object-fit: contain;
-        object-position: center;
+        object-position: center center;
+        background: #111;
     }
 
     .coach-info {
@@ -1095,6 +1153,15 @@ footer {
         font-size: 21px;
     }
 
+    .coach-toolbar {
+        gap: 8px;
+    }
+
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+    }
+
     .cta-content {
         align-items: flex-start;
         flex-direction: column;
@@ -1102,6 +1169,8 @@ footer {
 
     .btn-dark {
         width: 100%;
+        white-space: normal;
+        text-align: center;
     }
 
     .contact-grid {
@@ -1129,7 +1198,65 @@ footer {
     }
 }
 
-/* УМЕНЬШЕНИЕ АНИМАЦИЙ */
+/* ========================================
+   МАЛЕНЬКИЕ ТЕЛЕФОНЫ
+======================================== */
+
+@media (max-width: 380px) {
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    .brand {
+        gap: 7px;
+        font-size: 21px;
+    }
+
+    .brand-mark {
+        width: 31px;
+        height: 31px;
+    }
+
+    h1 {
+        font-size: 46px;
+    }
+
+    .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .hero-actions .btn,
+    .hero-actions .btn-outline {
+        width: 100%;
+    }
+
+    .sports-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .sport-card {
+        min-height: 190px;
+    }
+
+    .coach-track {
+        grid-auto-columns: 92%;
+    }
+
+    .coach-track .coach-card .coach-photo {
+        height: 360px;
+        min-height: 360px;
+        max-height: 360px;
+    }
+
+    .price-card {
+        padding: 23px 20px;
+    }
+}
+
+/* ========================================
+   УМЕНЬШЕНИЕ АНИМАЦИЙ
+======================================== */
 
 @media (prefers-reduced-motion: reduce) {
     html {
